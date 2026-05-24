@@ -24,7 +24,7 @@ function Chart() {
     }
 
     return (
-        <Space direction="vertical" size="large" style={{ display: "flex" }}>
+        <Space orientation="vertical" size="large" style={{ display: "flex" }}>
             <div>
                 <Title level={2}>Графік курсу</Title>
                 <Paragraph type="secondary">

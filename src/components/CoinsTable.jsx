@@ -22,7 +22,7 @@ export function CoinsTable({ coins, loading = false, pagination = false, onChang
             render: (_, coin) => (
                 <Space size="middle">
                     <Avatar alt={coin.name} size={28} src={coin.image} />
-                    <Space direction="vertical" size={0}>
+                    <Space orientation="vertical" size={0}>
                         <Text strong>{coin.name}</Text>
                         <Text type="secondary">{coin.symbol.toUpperCase()}</Text>
                     </Space>

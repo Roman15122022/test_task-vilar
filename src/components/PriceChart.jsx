@@ -14,8 +14,8 @@ export function PriceChart({ data, loading = false }) {
     return (
         <div aria-busy={loading} data-testid="price-chart">
             <Spin spinning={loading}>
-                <div style={{ height: 360, minWidth: 0, width: "100%" }}>
-                    <ResponsiveContainer height="100%" width="100%">
+                <div style={{ minHeight: 360, minWidth: 0, width: "100%" }}>
+                    <ResponsiveContainer height={360} minHeight={360} minWidth={0} width="100%">
                         <LineChart data={data} margin={{ bottom: 8, left: 8, right: 16, top: 16 }}>
                             <CartesianGrid strokeDasharray="3 3" />
                             <XAxis dataKey="label" minTickGap={24} />

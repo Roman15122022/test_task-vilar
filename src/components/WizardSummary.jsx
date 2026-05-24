@@ -5,7 +5,7 @@ const { Title } = Typography;
 
 export function WizardSummary({ onReset, values }) {
     return (
-        <Space direction="vertical" size="large" style={{ display: "flex", maxWidth: 720 }}>
+        <Space orientation="vertical" size="large" style={{ display: "flex", maxWidth: 720 }}>
             <Title level={2}>Підсумок</Title>
             <Descriptions bordered column={1} size="middle">
                 <Descriptions.Item label="Імʼя">{values.name}</Descriptions.Item>

@@ -25,7 +25,7 @@ function CoinsPaged() {
     }
 
     return (
-        <Space direction="vertical" size="large" style={{ display: "flex" }}>
+        <Space orientation="vertical" size="large" style={{ display: "flex" }}>
             <div>
                 <Title level={2}>Криптовалюти з пагінацією</Title>
                 <Paragraph type="secondary">
@@ -47,7 +47,7 @@ function CoinsPaged() {
                     pagination={{
                         current: page,
                         pageSize: PAGE_SIZE,
-                        position: ["bottomRight"],
+                        placement: ["bottomRight"],
                         responsive: true,
                         showSizeChanger: false,
                         total: TOTAL_ITEMS,

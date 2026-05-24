@@ -8,7 +8,7 @@ function Coins() {
     const { data = [], error, isError, isPending } = useCoinsQuery({ page: 1, perPage: 50 });
 
     return (
-        <Space direction="vertical" size="large" style={{ display: "flex" }}>
+        <Space orientation="vertical" size="large" style={{ display: "flex" }}>
             <div>
                 <Title level={2}>Топ криптовалют</Title>
                 <Paragraph type="secondary">
