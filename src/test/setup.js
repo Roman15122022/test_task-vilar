@@ -8,6 +8,10 @@ class ResizeObserverMock {
 
 globalThis.ResizeObserver = ResizeObserverMock;
 
+const getComputedStyle = window.getComputedStyle;
+
+window.getComputedStyle = (element) => getComputedStyle(element);
+
 Object.defineProperty(window, "matchMedia", {
     writable: true,
     value: (query) => ({
