@@ -1,4 +1,4 @@
-import { queryOptions, useQuery } from "@tanstack/react-query";
+import { keepPreviousData, queryOptions, useQuery } from "@tanstack/react-query";
 import { coinKeys, getCoinsMarkets } from "@/api/coingecko.js";
 
 export function coinsMarketsOptions({ page = 1, perPage = 50 } = {}) {
@@ -14,3 +14,5 @@ export function useCoinsQuery(params, options = {}) {
         ...options,
     });
 }
+
+export { keepPreviousData };
