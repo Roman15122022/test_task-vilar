@@ -1,6 +1,6 @@
 import { Layout, Menu, theme } from "antd";
 import { Link, Outlet, useLocation } from "react-router-dom";
-import { routes } from "../routes.jsx";
+import { routes } from "@/routes.jsx";
 
 const { Header, Sider, Content, Footer } = Layout;
 
@@ -53,9 +53,7 @@ function AppLayout() {
                     </Content>
                 </Layout>
             </Layout>
-            <Footer style={{ textAlign: "center" }}>
-                My App ©{new Date().getFullYear()}
-            </Footer>
+            <Footer style={{ textAlign: "center" }}>My App ©{new Date().getFullYear()}</Footer>
         </Layout>
     );
 }

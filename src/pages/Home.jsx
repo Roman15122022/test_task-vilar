@@ -13,9 +13,7 @@ function Home() {
                 </Link>{" "}
                 у корені проєкту.
             </Paragraph>
-            <Paragraph type="secondary">
-                Стек: React + Vite + Ant Design + React Router.
-            </Paragraph>
+            <Paragraph type="secondary">Стек: React + Vite + Ant Design + React Router.</Paragraph>
         </Card>
     );
 }
