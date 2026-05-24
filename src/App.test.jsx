@@ -6,6 +6,7 @@ describe("App", () => {
         render(<App />);
 
         expect(screen.getByRole("heading", { name: "Тестове завдання" })).toBeInTheDocument();
+        expect(screen.getByRole("link", { name: /home/i })).toBeInTheDocument();
         expect(
             screen.getByText(/React \+ Vite \+ Ant Design \+ React Router/i),
         ).toBeInTheDocument();

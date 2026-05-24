@@ -1,8 +1,9 @@
-import { Layout, Menu, theme } from "antd";
+import { Grid, Layout, Menu, theme } from "antd";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import { routes } from "@/routes.jsx";
 
 const { Header, Sider, Content, Footer } = Layout;
+const { useBreakpoint } = Grid;
 
 const menuItems = routes.map((r) => ({
     key: r.path,
@@ -12,48 +13,75 @@ const menuItems = routes.map((r) => ({
 
 function AppLayout() {
     const { pathname } = useLocation();
+    const screens = useBreakpoint();
+    const isDesktop = screens.md ?? true;
     const {
         token: { colorBgContainer, borderRadiusLG },
     } = theme.useToken();
 
     return (
         <Layout style={{ minHeight: "100vh" }}>
-            <Header style={{ display: "flex", alignItems: "center" }}>
+            <Header
+                style={{
+                    alignItems: "center",
+                    display: "flex",
+                    gap: 24,
+                    minWidth: 0,
+                    paddingInline: isDesktop ? 32 : 16,
+                }}
+            >
                 <div
                     style={{
                         color: "#fff",
+                        flex: "0 0 auto",
                         fontSize: 20,
                         fontWeight: 600,
-                        marginRight: 32,
                     }}
                 >
                     My App
                 </div>
-            </Header>
-            <Layout>
-                <Sider width={220} breakpoint="lg" collapsedWidth="0">
+                {!isDesktop && (
                     <Menu
-                        mode="inline"
-                        selectedKeys={[pathname]}
+                        aria-label="Main navigation"
                         items={menuItems}
-                        style={{ height: "100%", borderRight: 0 }}
+                        mode="horizontal"
+                        selectedKeys={[pathname]}
+                        style={{ flex: "1 1 auto", minWidth: 0 }}
+                        theme="dark"
                     />
-                </Sider>
-                <Layout style={{ padding: 24 }}>
+                )}
+            </Header>
+            <Layout style={{ minWidth: 0 }}>
+                {isDesktop && (
+                    <Sider width={220}>
+                        <Menu
+                            aria-label="Main navigation"
+                            mode="inline"
+                            selectedKeys={[pathname]}
+                            items={menuItems}
+                            style={{ height: "100%", borderRight: 0 }}
+                        />
+                    </Sider>
+                )}
+                <Layout style={{ minWidth: 0, padding: isDesktop ? 24 : 12 }}>
                     <Content
                         style={{
-                            padding: 24,
-                            margin: 0,
-                            minHeight: 280,
                             background: colorBgContainer,
                             borderRadius: borderRadiusLG,
+                            margin: 0,
+                            minHeight: 280,
+                            minWidth: 0,
+                            overflow: "hidden",
+                            padding: isDesktop ? 24 : 16,
                         }}
                     >
                         <Outlet />
                     </Content>
                 </Layout>
             </Layout>
-            <Footer style={{ textAlign: "center" }}>My App ©{new Date().getFullYear()}</Footer>
+            <Footer style={{ padding: isDesktop ? "24px 50px" : 16, textAlign: "center" }}>
+                My App ©{new Date().getFullYear()}
+            </Footer>
         </Layout>
     );
 }
