@@ -15,6 +15,10 @@ export const theme = {
       borderRadiusLG: 10,
       borderRadiusSM: 6,
     },
+    Layout: {
+      headerBg: PRIMARY_COLOR,
+      headerColor: TABLE_HEADER_TEXT_COLOR,
+    },
     Table: {
       headerBg: TABLE_HEADER_BACKGROUND,
       headerColor: TABLE_HEADER_TEXT_COLOR,

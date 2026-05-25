@@ -12,6 +12,8 @@ describe("theme", () => {
     expect(PRIMARY_COLOR).toBe("#1890ff");
     expect(theme.token.colorPrimary).toBe(PRIMARY_COLOR);
     expect(theme.components.Button.borderRadius).toBeGreaterThan(0);
+    expect(theme.components.Layout.headerBg).toBe(PRIMARY_COLOR);
+    expect(theme.components.Layout.headerColor).toBe(TABLE_HEADER_TEXT_COLOR);
     expect(TABLE_HEADER_BACKGROUND).toBe(PRIMARY_COLOR);
     expect(theme.components.Table.headerBg).toBe(TABLE_HEADER_BACKGROUND);
     expect(theme.components.Table.headerColor).toBe(TABLE_HEADER_TEXT_COLOR);
