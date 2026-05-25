@@ -55,8 +55,29 @@ describe("Wizard page", () => {
     await user.tab();
 
     await waitFor(() => {
-      expect(screen.getByLabelText("Вік")).toHaveValue("17");
+      expect(screen.getByLabelText("Вік")).toHaveValue(17);
       expect(screen.getByText("Мінімум 18")).toBeInTheDocument();
+      expect(screen.getByRole("button", { name: "Відправити" })).toBeDisabled();
+    });
+  });
+
+  it("shows a different validation error when age is above 100", async () => {
+    const user = userEvent.setup();
+    renderWithClient(<WizardPage />);
+
+    await user.type(screen.getByLabelText("Імʼя"), "Alex");
+    await user.type(screen.getByLabelText("Email"), "alex@example.com");
+    await selectCountry(user);
+    await user.type(screen.getByLabelText("Вік"), "101");
+
+    expect(screen.getByRole("button", { name: "Відправити" })).toBeDisabled();
+
+    await user.tab();
+
+    await waitFor(() => {
+      expect(screen.getByLabelText("Вік")).toHaveValue(101);
+      expect(screen.getByText("Максимум 100")).toBeInTheDocument();
+      expect(screen.queryByText("Мінімум 18")).not.toBeInTheDocument();
       expect(screen.getByRole("button", { name: "Відправити" })).toBeDisabled();
     });
   });
