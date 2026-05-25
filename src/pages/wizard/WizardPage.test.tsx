@@ -1,7 +1,7 @@
 import { screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import type { UserEvent } from "@testing-library/user-event";
-import WizardPage from "@/pages/WizardPage";
+import WizardPage from "@/pages/wizard/WizardPage";
 import { renderWithClient } from "@/shared/test/renderWithClient";
 
 async function selectCountry(user: UserEvent, country = "Україна") {

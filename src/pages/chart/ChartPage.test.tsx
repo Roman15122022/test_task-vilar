@@ -1,7 +1,7 @@
 import { screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import type { ReactNode } from "react";
-import ChartPage from "@/pages/ChartPage";
+import ChartPage from "@/pages/chart/ChartPage";
 import { COINGECKO_MARKET_CHART_DAYS } from "@/shared/constants/api";
 import { renderWithClient } from "@/shared/test/renderWithClient";
 

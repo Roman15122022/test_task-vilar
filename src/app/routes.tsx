@@ -4,11 +4,11 @@ import HomeOutlined from "@ant-design/icons/es/icons/HomeOutlined";
 import LineChartOutlined from "@ant-design/icons/es/icons/LineChartOutlined";
 import TableOutlined from "@ant-design/icons/es/icons/TableOutlined";
 import type { ReactElement } from "react";
-import ChartPage from "@/pages/ChartPage";
-import CoinsPage from "@/pages/CoinsPage";
-import CoinsPagedPage from "@/pages/CoinsPagedPage";
-import HomePage from "@/pages/HomePage";
-import WizardPage from "@/pages/WizardPage";
+import ChartPage from "@/pages/chart/ChartPage";
+import CoinsPage from "@/pages/coins/CoinsPage";
+import CoinsPagedPage from "@/pages/coins-paged/CoinsPagedPage";
+import HomePage from "@/pages/home/HomePage";
+import WizardPage from "@/pages/wizard/WizardPage";
 
 export type AppRoute = {
   path: string;

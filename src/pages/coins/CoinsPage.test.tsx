@@ -1,5 +1,5 @@
 import { screen, waitFor } from "@testing-library/react";
-import CoinsPage from "@/pages/CoinsPage";
+import CoinsPage from "@/pages/coins/CoinsPage";
 import { FIRST_PAGE, TOP_COINS_PAGE_SIZE } from "@/shared/constants/api";
 import { renderWithClient } from "@/shared/test/renderWithClient";
 
