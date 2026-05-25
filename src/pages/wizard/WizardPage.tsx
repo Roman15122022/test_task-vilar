@@ -1,4 +1,5 @@
 import { Space, Typography } from "antd";
+import type { ReactElement } from "react";
 import { useState } from "react";
 import { WizardForm } from "@/features/wizard/components/WizardForm";
 import { WizardSummary } from "@/features/wizard/components/WizardSummary";
@@ -6,7 +7,7 @@ import type { WizardValues } from "@/features/wizard/utils/wizardForm";
 
 const { Paragraph, Title } = Typography;
 
-function WizardPage() {
+function WizardPage(): ReactElement {
   const [submittedValues, setSubmittedValues] = useState<WizardValues | null>(null);
 
   if (submittedValues) {

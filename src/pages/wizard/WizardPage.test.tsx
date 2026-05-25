@@ -41,7 +41,7 @@ describe("Wizard page", () => {
     });
   });
 
-  it("normalizes age below 18 to 18 instead of showing a min validation error", async () => {
+  it("shows a validation error when age is below 18", async () => {
     const user = userEvent.setup();
     renderWithClient(<WizardPage />);
 
@@ -55,9 +55,9 @@ describe("Wizard page", () => {
     await user.tab();
 
     await waitFor(() => {
-      expect(screen.getByLabelText("Вік")).toHaveValue("18");
-      expect(screen.queryByText("Мінімум 18")).not.toBeInTheDocument();
-      expect(screen.getByRole("button", { name: "Відправити" })).toBeEnabled();
+      expect(screen.getByLabelText("Вік")).toHaveValue("17");
+      expect(screen.getByText("Мінімум 18")).toBeInTheDocument();
+      expect(screen.getByRole("button", { name: "Відправити" })).toBeDisabled();
     });
   });
 

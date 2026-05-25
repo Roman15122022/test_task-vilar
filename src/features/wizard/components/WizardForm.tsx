@@ -1,4 +1,5 @@
 import { Button, Form, Input, InputNumber, Select, Space } from "antd";
+import type { ReactElement } from "react";
 import { useState } from "react";
 import {
   countryOptions,
@@ -11,11 +12,11 @@ type WizardFormProps = {
   onSubmit: (values: WizardValues) => void;
 };
 
-function hasRequiredValue(value: unknown) {
+function hasRequiredValue(value: unknown): boolean {
   return value !== undefined && value !== null && value !== "";
 }
 
-export function WizardForm({ onSubmit }: WizardFormProps) {
+export function WizardForm({ onSubmit }: WizardFormProps): ReactElement {
   const [form] = Form.useForm<WizardValues>();
   const [canSubmit, setCanSubmit] = useState(false);
 
@@ -32,16 +33,6 @@ export function WizardForm({ onSubmit }: WizardFormProps) {
     const hasErrors = form.getFieldsError().some(({ errors }) => errors.length > 0);
 
     setCanSubmit(hasAllRequiredValues && hasValidAge && !hasErrors);
-  }
-
-  function handleAgeBlur() {
-    const age = form.getFieldValue("age");
-
-    if (typeof age === "number" && age < wizardValidation.ageMin) {
-      form.setFieldValue("age", wizardValidation.ageMin);
-      void form.validateFields(["age"]);
-      window.setTimeout(updateSubmitState, 0);
-    }
   }
 
   return (
@@ -88,6 +79,11 @@ export function WizardForm({ onSubmit }: WizardFormProps) {
         rules={[
           { message: "Введіть вік", required: true },
           {
+            message: `Мінімум ${wizardValidation.ageMin}`,
+            min: wizardValidation.ageMin,
+            type: "number",
+          },
+          {
             max: wizardValidation.ageMax,
             message: `Максимум ${wizardValidation.ageMax}`,
             type: "number",
@@ -97,8 +93,6 @@ export function WizardForm({ onSubmit }: WizardFormProps) {
         <InputNumber
           aria-label="Вік"
           max={wizardValidation.ageMax}
-          min={wizardValidation.ageMin}
-          onBlur={handleAgeBlur}
           placeholder={String(wizardValidation.ageMin)}
           style={{ width: "100%" }}
         />

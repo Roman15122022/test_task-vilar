@@ -1,6 +1,7 @@
 import { Avatar, Space, Table, Typography } from "antd";
 import type { TablePaginationConfig, TableProps } from "antd";
 import type { ColumnsType } from "antd/es/table";
+import type { ReactElement } from "react";
 import type { CoinMarket } from "@/shared/api/coingecko";
 import { formatCompactCurrency, formatCurrency, formatPercent } from "@/shared/utils/formatters";
 
@@ -19,7 +20,7 @@ const COLUMN_WIDTHS = {
   value: 160,
 } as const;
 
-function getChangeColor(value: number | null) {
+function getChangeColor(value: number | null): string {
   return (value ?? 0) >= 0 ? COIN_CHANGE_COLORS.positive : COIN_CHANGE_COLORS.negative;
 }
 
@@ -35,7 +36,7 @@ export function CoinsTable({
   loading = false,
   pagination = false,
   onChange,
-}: CoinsTableProps) {
+}: CoinsTableProps): ReactElement {
   const columns: ColumnsType<CoinMarket> = [
     {
       dataIndex: "market_cap_rank",

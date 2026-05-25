@@ -1,4 +1,5 @@
 import { Button, Descriptions, Space, Typography } from "antd";
+import type { ReactElement } from "react";
 import { getCountryLabel } from "@/features/wizard/utils/wizardForm";
 import type { WizardValues } from "@/features/wizard/utils/wizardForm";
 
@@ -9,7 +10,7 @@ type WizardSummaryProps = {
   values: WizardValues;
 };
 
-export function WizardSummary({ onReset, values }: WizardSummaryProps) {
+export function WizardSummary({ onReset, values }: WizardSummaryProps): ReactElement {
   return (
     <Space orientation="vertical" size="large" style={{ display: "flex", maxWidth: 720 }}>
       <Title level={2}>Підсумок</Title>

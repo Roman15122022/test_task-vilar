@@ -1,11 +1,12 @@
 import { Alert, Space, Typography } from "antd";
+import type { ReactElement } from "react";
 import { CoinsTable } from "@/features/coins/components/CoinsTable";
 import { useCoinsQuery } from "@/features/coins/hooks/useCoinsQuery";
 import { FIRST_PAGE, TOP_COINS_PAGE_SIZE } from "@/shared/constants/api";
 
 const { Paragraph, Title } = Typography;
 
-function CoinsPage() {
+function CoinsPage(): ReactElement {
   const {
     data = [],
     error,

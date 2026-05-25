@@ -1,5 +1,6 @@
 import ReloadOutlined from "@ant-design/icons/es/icons/ReloadOutlined";
 import { Button, Segmented, Space } from "antd";
+import type { ReactElement } from "react";
 import { chartCoins } from "@/shared/constants/chart";
 import type { ChartCoinId } from "@/shared/constants/chart";
 
@@ -10,7 +11,12 @@ type ChartControlsProps = {
   refreshing: boolean;
 };
 
-export function ChartControls({ coinId, onCoinChange, onRefresh, refreshing }: ChartControlsProps) {
+export function ChartControls({
+  coinId,
+  onCoinChange,
+  onRefresh,
+  refreshing,
+}: ChartControlsProps): ReactElement {
   return (
     <Space
       size="middle"

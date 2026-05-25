@@ -1,4 +1,5 @@
 import { Alert, Space, Typography } from "antd";
+import type { ReactElement } from "react";
 import { useMemo, useState } from "react";
 import { ChartControls } from "@/features/chart/components/ChartControls";
 import { PriceChart } from "@/features/chart/components/PriceChart";
@@ -13,7 +14,7 @@ import { DEFAULT_CHART_COIN_ID } from "@/shared/constants/chart";
 
 const { Paragraph, Title } = Typography;
 
-function ChartPage() {
+function ChartPage(): ReactElement {
   const [coinId, setCoinId] = useState(DEFAULT_CHART_COIN_ID);
   const [manualRefreshing, setManualRefreshing] = useState(false);
   const { data, error, isError, isPending, refetch } = useCoinChartQuery(coinId);

@@ -8,6 +8,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
+import type { ReactElement } from "react";
 import type { ChartPoint } from "@/features/chart/utils/chartData";
 import { FIRST_TOOLTIP_PAYLOAD_INDEX } from "@/shared/constants/chart";
 import { formatCurrency } from "@/shared/utils/formatters";
@@ -20,7 +21,7 @@ type PriceChartProps = {
   loading?: boolean;
 };
 
-export function PriceChart({ data, loading = false }: PriceChartProps) {
+export function PriceChart({ data, loading = false }: PriceChartProps): ReactElement {
   return (
     <div aria-busy={loading} data-testid="price-chart">
       <Spin spinning={loading}>

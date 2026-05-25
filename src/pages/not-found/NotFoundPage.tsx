@@ -1,7 +1,8 @@
 import { Button, Result } from "antd";
+import type { ReactElement } from "react";
 import { Link } from "react-router-dom";
 
-function NotFoundPage() {
+function NotFoundPage(): ReactElement {
   return (
     <Result
       status="404"

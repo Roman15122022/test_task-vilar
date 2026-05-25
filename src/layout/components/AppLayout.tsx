@@ -1,4 +1,5 @@
 import { Grid, Layout, Menu, theme } from "antd";
+import type { ReactElement } from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import { routes } from "@/app/routes";
 
@@ -11,7 +12,7 @@ const menuItems = routes.map((route) => ({
   label: <Link to={route.path}>{route.label}</Link>,
 }));
 
-function AppLayout() {
+function AppLayout(): ReactElement {
   const { pathname } = useLocation();
   const screens = useBreakpoint();
   const isDesktop = screens.md ?? true;

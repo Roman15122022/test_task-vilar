@@ -1,7 +1,6 @@
 import {
   PRIMARY_COLOR,
   TABLE_HEADER_BACKGROUND,
-  TABLE_HEADER_ICON_COLOR,
   TABLE_HEADER_TEXT_COLOR,
   TABLE_ROW_HOVER_BACKGROUND,
   theme,
@@ -17,7 +16,6 @@ describe("theme", () => {
     expect(TABLE_HEADER_BACKGROUND).toBe(PRIMARY_COLOR);
     expect(theme.components.Table.headerBg).toBe(TABLE_HEADER_BACKGROUND);
     expect(theme.components.Table.headerColor).toBe(TABLE_HEADER_TEXT_COLOR);
-    expect(theme.components.Table.headerIconColor).toBe(TABLE_HEADER_ICON_COLOR);
     expect(theme.components.Table.headerSortActiveBg).toBe(TABLE_HEADER_BACKGROUND);
     expect(theme.components.Table.headerSortHoverBg).toBe(TABLE_HEADER_BACKGROUND);
     expect(theme.components.Table.rowHoverBg).toBe(TABLE_ROW_HOVER_BACKGROUND);

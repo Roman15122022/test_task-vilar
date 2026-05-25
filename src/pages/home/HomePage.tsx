@@ -1,8 +1,9 @@
 import { Card, Typography } from "antd";
+import type { ReactElement } from "react";
 
 const { Title, Paragraph, Link } = Typography;
 
-function HomePage() {
+function HomePage(): ReactElement {
   return (
     <Card>
       <Title level={2}>Тестове завдання</Title>

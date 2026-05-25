@@ -1,5 +1,6 @@
 import { Alert, Space, Typography } from "antd";
 import type { TablePaginationConfig } from "antd";
+import type { ReactElement } from "react";
 import { useSearchParams } from "react-router-dom";
 import { CoinsTable } from "@/features/coins/components/CoinsTable";
 import { keepPreviousData, useCoinsQuery } from "@/features/coins/hooks/useCoinsQuery";
@@ -13,7 +14,7 @@ import { normalizePage } from "@/shared/utils/pagination";
 const { Paragraph, Title } = Typography;
 const TOTAL_ITEMS = PAGINATED_COINS_PAGE_SIZE * PAGINATED_COINS_TOTAL_PAGES;
 
-function CoinsPagedPage() {
+function CoinsPagedPage(): ReactElement {
   const [searchParams, setSearchParams] = useSearchParams();
   const page = normalizePage(searchParams.get("page"));
   const {
