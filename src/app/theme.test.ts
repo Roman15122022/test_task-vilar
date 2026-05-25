@@ -1,0 +1,18 @@
+import {
+  PRIMARY_COLOR,
+  TABLE_HEADER_BACKGROUND,
+  TABLE_HEADER_TEXT_COLOR,
+  TABLE_ROW_HOVER_BACKGROUND,
+  theme,
+} from "@/app/theme";
+
+describe("theme", () => {
+  it("configures the requested global Ant Design tokens", () => {
+    expect(theme.token.colorPrimary).toBe(PRIMARY_COLOR);
+    expect(theme.components.Button.borderRadius).toBeGreaterThan(0);
+    expect(theme.components.Table.headerBg).toBe(TABLE_HEADER_BACKGROUND);
+    expect(theme.components.Table.headerColor).toBe(TABLE_HEADER_TEXT_COLOR);
+    expect(theme.components.Table.rowHoverBg).toBe(TABLE_ROW_HOVER_BACKGROUND);
+    expect(theme.components.Table.cellPaddingBlock).toBe(10);
+  });
+});
