@@ -28,8 +28,8 @@ function CoinsPage(): ReactElement {
       {isError ? (
         <Alert
           description={error.message}
-          message="Не вдалося завантажити криптовалюти"
           showIcon
+          title="Не вдалося завантажити криптовалюти"
           type="error"
         />
       ) : (

@@ -48,8 +48,8 @@ function ChartPage(): ReactElement {
       {isError ? (
         <Alert
           description={error.message}
-          message="Не вдалося завантажити графік"
           showIcon
+          title="Не вдалося завантажити графік"
           type="error"
         />
       ) : (

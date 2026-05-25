@@ -44,8 +44,8 @@ function CoinsPagedPage(): ReactElement {
       {isError ? (
         <Alert
           description={error.message}
-          message="Не вдалося завантажити сторінку криптовалют"
           showIcon
+          title="Не вдалося завантажити сторінку криптовалют"
           type="error"
         />
       ) : (
