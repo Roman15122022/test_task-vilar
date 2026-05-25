@@ -13,7 +13,7 @@ import { DEFAULT_CHART_COIN_ID } from "@/shared/constants/chart";
 
 const { Paragraph, Title } = Typography;
 
-function Chart() {
+function ChartPage() {
   const [coinId, setCoinId] = useState(DEFAULT_CHART_COIN_ID);
   const [manualRefreshing, setManualRefreshing] = useState(false);
   const { data, error, isError, isPending, refetch } = useCoinChartQuery(coinId);
@@ -58,4 +58,4 @@ function Chart() {
   );
 }
 
-export default Chart;
+export default ChartPage;

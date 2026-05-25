@@ -1,7 +1,7 @@
 import { screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import type { UserEvent } from "@testing-library/user-event";
-import Wizard from "@/features/wizard/pages/Wizard";
+import WizardPage from "@/pages/WizardPage";
 import { renderWithClient } from "@/shared/test/renderWithClient";
 
 async function selectCountry(user: UserEvent, country = "Україна") {
@@ -19,7 +19,7 @@ async function fillValidForm(user: UserEvent) {
 describe("Wizard page", () => {
   it("keeps submit disabled until required fields are valid", async () => {
     const user = userEvent.setup();
-    renderWithClient(<Wizard />);
+    renderWithClient(<WizardPage />);
 
     const submit = screen.getByRole("button", { name: "Відправити" });
     expect(submit).toBeDisabled();
@@ -43,7 +43,7 @@ describe("Wizard page", () => {
 
   it("normalizes age below 18 to 18 instead of showing a min validation error", async () => {
     const user = userEvent.setup();
-    renderWithClient(<Wizard />);
+    renderWithClient(<WizardPage />);
 
     await user.type(screen.getByLabelText("Імʼя"), "Alex");
     await user.type(screen.getByLabelText("Email"), "alex@example.com");
@@ -63,7 +63,7 @@ describe("Wizard page", () => {
 
   it("shows summary after submit and resets back to an empty form", async () => {
     const user = userEvent.setup();
-    renderWithClient(<Wizard />);
+    renderWithClient(<WizardPage />);
 
     await fillValidForm(user);
     await waitFor(() => {

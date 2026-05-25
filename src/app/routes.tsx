@@ -4,11 +4,11 @@ import HomeOutlined from "@ant-design/icons/es/icons/HomeOutlined";
 import LineChartOutlined from "@ant-design/icons/es/icons/LineChartOutlined";
 import TableOutlined from "@ant-design/icons/es/icons/TableOutlined";
 import type { ReactElement } from "react";
-import HomePage from "@/app/pages/HomePage";
-import Chart from "@/features/chart/pages/Chart";
-import Coins from "@/features/coins/pages/Coins";
-import CoinsPaged from "@/features/coins/pages/CoinsPaged";
-import Wizard from "@/features/wizard/pages/Wizard";
+import ChartPage from "@/pages/ChartPage";
+import CoinsPage from "@/pages/CoinsPage";
+import CoinsPagedPage from "@/pages/CoinsPagedPage";
+import HomePage from "@/pages/HomePage";
+import WizardPage from "@/pages/WizardPage";
 
 export type AppRoute = {
   path: string;
@@ -19,13 +19,13 @@ export type AppRoute = {
 
 export const routes: AppRoute[] = [
   { path: "/", label: "Home", icon: <HomeOutlined />, element: <HomePage /> },
-  { path: "/coins", label: "Coins", icon: <DollarCircleOutlined />, element: <Coins /> },
+  { path: "/coins", label: "Coins", icon: <DollarCircleOutlined />, element: <CoinsPage /> },
   {
     path: "/coins-paged",
     label: "Coins Paged",
     icon: <TableOutlined />,
-    element: <CoinsPaged />,
+    element: <CoinsPagedPage />,
   },
-  { path: "/chart", label: "Chart", icon: <LineChartOutlined />, element: <Chart /> },
-  { path: "/wizard", label: "Wizard", icon: <FormOutlined />, element: <Wizard /> },
+  { path: "/chart", label: "Chart", icon: <LineChartOutlined />, element: <ChartPage /> },
+  { path: "/wizard", label: "Wizard", icon: <FormOutlined />, element: <WizardPage /> },
 ];

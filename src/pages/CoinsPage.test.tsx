@@ -1,5 +1,5 @@
 import { screen, waitFor } from "@testing-library/react";
-import Coins from "@/features/coins/pages/Coins";
+import CoinsPage from "@/pages/CoinsPage";
 import { FIRST_PAGE, TOP_COINS_PAGE_SIZE } from "@/shared/constants/api";
 import { renderWithClient } from "@/shared/test/renderWithClient";
 
@@ -29,7 +29,7 @@ describe("Coins page", () => {
     });
     vi.stubGlobal("fetch", fetchMock);
 
-    renderWithClient(<Coins />);
+    renderWithClient(<CoinsPage />);
 
     expect(await screen.findByText("Bitcoin")).toBeInTheDocument();
     expect(fetchMock).toHaveBeenCalledTimes(1);
@@ -43,7 +43,7 @@ describe("Coins page", () => {
       vi.fn(() => new Promise(() => {})),
     );
 
-    renderWithClient(<Coins />);
+    renderWithClient(<CoinsPage />);
 
     expect(screen.getByTestId("coins-table")).toHaveAttribute("aria-busy", "true");
   });
@@ -57,7 +57,7 @@ describe("Coins page", () => {
       }),
     );
 
-    renderWithClient(<Coins />);
+    renderWithClient(<CoinsPage />);
 
     expect(await screen.findByText("Не вдалося завантажити криптовалюти")).toBeInTheDocument();
     await waitFor(() => {

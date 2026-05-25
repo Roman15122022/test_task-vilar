@@ -13,7 +13,7 @@ import { normalizePage } from "@/shared/utils/pagination";
 const { Paragraph, Title } = Typography;
 const TOTAL_ITEMS = PAGINATED_COINS_PAGE_SIZE * PAGINATED_COINS_TOTAL_PAGES;
 
-function CoinsPaged() {
+function CoinsPagedPage() {
   const [searchParams, setSearchParams] = useSearchParams();
   const page = normalizePage(searchParams.get("page"));
   const {
@@ -66,4 +66,4 @@ function CoinsPaged() {
   );
 }
 
-export default CoinsPaged;
+export default CoinsPagedPage;

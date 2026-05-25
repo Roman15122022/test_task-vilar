@@ -1,7 +1,7 @@
 import { screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import type { ReactNode } from "react";
-import Chart from "@/features/chart/pages/Chart";
+import ChartPage from "@/pages/ChartPage";
 import { COINGECKO_MARKET_CHART_DAYS } from "@/shared/constants/api";
 import { renderWithClient } from "@/shared/test/renderWithClient";
 
@@ -53,7 +53,7 @@ describe("Chart page", () => {
     const fetchMock = vi.fn().mockResolvedValue(okChartResponse());
     vi.stubGlobal("fetch", fetchMock);
 
-    renderWithClient(<Chart />);
+    renderWithClient(<ChartPage />);
 
     await waitFor(() => {
       expect(screen.getByTestId("line-chart")).toHaveAttribute("data-points", "2");
@@ -68,7 +68,7 @@ describe("Chart page", () => {
     const fetchMock = vi.fn().mockResolvedValue(okChartResponse());
     vi.stubGlobal("fetch", fetchMock);
 
-    renderWithClient(<Chart />);
+    renderWithClient(<ChartPage />);
 
     await waitFor(() => {
       expect(fetchMock).toHaveBeenCalledTimes(1);
@@ -89,7 +89,7 @@ describe("Chart page", () => {
       .mockImplementationOnce(() => new Promise(() => {}));
     vi.stubGlobal("fetch", fetchMock);
 
-    renderWithClient(<Chart />);
+    renderWithClient(<ChartPage />);
 
     await waitFor(() => {
       expect(screen.getByTestId("line-chart")).toHaveAttribute("data-points", "2");
@@ -112,7 +112,7 @@ describe("Chart page", () => {
       }),
     );
 
-    renderWithClient(<Chart />);
+    renderWithClient(<ChartPage />);
 
     expect(await screen.findByText("Не вдалося завантажити графік")).toBeInTheDocument();
     expect(screen.getByText(/CoinGecko request failed with 500/)).toBeInTheDocument();

@@ -5,7 +5,7 @@ import { FIRST_PAGE, TOP_COINS_PAGE_SIZE } from "@/shared/constants/api";
 
 const { Paragraph, Title } = Typography;
 
-function Coins() {
+function CoinsPage() {
   const {
     data = [],
     error,
@@ -38,4 +38,4 @@ function Coins() {
   );
 }
 
-export default Coins;
+export default CoinsPage;

@@ -1,7 +1,7 @@
 import { MemoryRouter, Route, Routes } from "react-router-dom";
 import { screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import CoinsPaged from "@/features/coins/pages/CoinsPaged";
+import CoinsPagedPage from "@/pages/CoinsPagedPage";
 import { FIRST_PAGE, PAGINATED_COINS_PAGE_SIZE } from "@/shared/constants/api";
 import { renderWithClient } from "@/shared/test/renderWithClient";
 import { normalizePage } from "@/shared/utils/pagination";
@@ -24,7 +24,7 @@ function renderPage(initialEntry = "/coins-paged") {
   return renderWithClient(
     <MemoryRouter initialEntries={[initialEntry]}>
       <Routes>
-        <Route path="/coins-paged" element={<CoinsPaged />} />
+        <Route path="/coins-paged" element={<CoinsPagedPage />} />
       </Routes>
     </MemoryRouter>,
   );

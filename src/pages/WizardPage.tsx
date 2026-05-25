@@ -6,7 +6,7 @@ import type { WizardValues } from "@/features/wizard/utils/wizardForm";
 
 const { Paragraph, Title } = Typography;
 
-function Wizard() {
+function WizardPage() {
   const [submittedValues, setSubmittedValues] = useState<WizardValues | null>(null);
 
   if (submittedValues) {
@@ -24,4 +24,4 @@ function Wizard() {
   );
 }
 
-export default Wizard;
+export default WizardPage;
