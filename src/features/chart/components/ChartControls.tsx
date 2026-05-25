@@ -18,10 +18,7 @@ export function ChartControls({
   refreshing,
 }: ChartControlsProps): ReactElement {
   return (
-    <Space
-      size="middle"
-      style={{ flexWrap: "wrap", justifyContent: "space-between", width: "100%" }}
-    >
+    <Space size="middle">
       <Segmented
         options={[...chartCoins]}
         value={coinId}

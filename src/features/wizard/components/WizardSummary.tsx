@@ -12,7 +12,7 @@ type WizardSummaryProps = {
 
 export function WizardSummary({ onReset, values }: WizardSummaryProps): ReactElement {
   return (
-    <Space orientation="vertical" size="large" style={{ display: "flex", maxWidth: 720 }}>
+    <Space orientation="vertical" size="large">
       <Title level={2}>Підсумок</Title>
       <Descriptions bordered column={1} size="middle">
         <Descriptions.Item label="Імʼя">{values.name}</Descriptions.Item>

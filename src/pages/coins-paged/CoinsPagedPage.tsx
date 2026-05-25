@@ -33,7 +33,7 @@ function CoinsPagedPage(): ReactElement {
   }
 
   return (
-    <Space orientation="vertical" size="large" style={{ display: "flex" }}>
+    <Space orientation="vertical" size="large">
       <div>
         <Title level={2}>Криптовалюти з пагінацією</Title>
         <Paragraph type="secondary">

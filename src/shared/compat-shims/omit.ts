@@ -1,2 +1,3 @@
-import { omit } from "../../../node_modules/es-toolkit/dist/compat/object/omit.mjs";
+import { omit } from "es-toolkit/object";
+
 export default omit;

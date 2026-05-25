@@ -15,7 +15,7 @@ function WizardPage(): ReactElement {
   }
 
   return (
-    <Space orientation="vertical" size="large" style={{ display: "flex" }}>
+    <Space orientation="vertical" size="large">
       <div>
         <Title level={2}>Форма користувача</Title>
         <Paragraph type="secondary">Заповніть поля, щоб побачити фінальний підсумок.</Paragraph>

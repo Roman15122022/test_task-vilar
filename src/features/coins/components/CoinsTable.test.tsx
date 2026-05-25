@@ -46,11 +46,7 @@ describe("CoinsTable", () => {
     render(<CoinsTable coins={coins} loading />);
 
     expect(screen.getByTestId("coins-table")).toHaveAttribute("aria-busy", "true");
-    expect(screen.getByTestId("coin-change-bitcoin")).toHaveStyle({
-      color: "#dc2626",
-    });
-    expect(screen.getByTestId("coin-change-ethereum")).toHaveStyle({
-      color: "#16a34a",
-    });
+    expect(screen.getByTestId("coin-change-bitcoin")).toHaveAttribute("data-change", "negative");
+    expect(screen.getByTestId("coin-change-ethereum")).toHaveAttribute("data-change", "positive");
   });
 });

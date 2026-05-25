@@ -7,11 +7,6 @@ import { formatCompactCurrency, formatCurrency, formatPercent } from "@/shared/u
 
 const { Text } = Typography;
 
-const COIN_CHANGE_COLORS = {
-  negative: "#dc2626",
-  positive: "#16a34a",
-} as const;
-
 const COLUMN_WIDTHS = {
   name: 220,
   percent: 120,
@@ -20,8 +15,8 @@ const COLUMN_WIDTHS = {
   value: 160,
 } as const;
 
-function getChangeColor(value: number | null): string {
-  return (value ?? 0) >= 0 ? COIN_CHANGE_COLORS.positive : COIN_CHANGE_COLORS.negative;
+function getChangeState(value: number | null): "positive" | "negative" {
+  return (value ?? 0) >= 0 ? "positive" : "negative";
 }
 
 type CoinsTableProps = {
@@ -72,10 +67,7 @@ export function CoinsTable({
       align: "right",
       dataIndex: "price_change_percentage_24h",
       render: (value, coin) => (
-        <span
-          data-testid={`coin-change-${coin.id}`}
-          style={{ color: getChangeColor(value), fontWeight: 600 }}
-        >
+        <span data-change={getChangeState(value)} data-testid={`coin-change-${coin.id}`}>
           {formatPercent(value)}
         </span>
       ),

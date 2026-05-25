@@ -1,2 +1,3 @@
-import { sumBy } from "../../../node_modules/es-toolkit/dist/compat/math/sumBy.mjs";
+import { sumBy } from "es-toolkit/math";
+
 export default sumBy;

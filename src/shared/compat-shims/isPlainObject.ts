@@ -1,2 +1,3 @@
-import { isPlainObject } from "../../../node_modules/es-toolkit/dist/compat/predicate/isPlainObject.mjs";
+import { isPlainObject } from "es-toolkit/predicate";
+
 export default isPlainObject;

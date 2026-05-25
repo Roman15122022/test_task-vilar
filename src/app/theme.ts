@@ -1,6 +1,8 @@
 import type { ThemeConfig } from "antd";
 
 export const PRIMARY_COLOR = "#1890ff";
+export const PRIMARY_ACTIVE_COLOR = "#1677ff";
+export const PRIMARY_HOVER_COLOR = "#40a9ff";
 export const TABLE_HEADER_BACKGROUND = PRIMARY_COLOR;
 export const TABLE_HEADER_TEXT_COLOR = "#ffffff";
 export const TABLE_ROW_HOVER_BACKGROUND = "#f0f7ff";
@@ -19,6 +21,18 @@ export const theme = {
     Layout: {
       headerBg: PRIMARY_COLOR,
       headerColor: TABLE_HEADER_TEXT_COLOR,
+    },
+    Menu: {
+      darkItemBg: PRIMARY_COLOR,
+      darkItemColor: "rgba(255, 255, 255, 0.78)",
+      darkItemHoverBg: PRIMARY_HOVER_COLOR,
+      darkItemHoverColor: TABLE_HEADER_TEXT_COLOR,
+      darkItemSelectedBg: PRIMARY_ACTIVE_COLOR,
+      darkItemSelectedColor: TABLE_HEADER_TEXT_COLOR,
+      darkPopupBg: PRIMARY_COLOR,
+      darkSubMenuItemBg: PRIMARY_COLOR,
+      horizontalItemHoverBg: PRIMARY_HOVER_COLOR,
+      horizontalItemSelectedBg: PRIMARY_ACTIVE_COLOR,
     },
     Table: {
       headerBg: TABLE_HEADER_BACKGROUND,

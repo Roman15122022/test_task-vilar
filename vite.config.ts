@@ -5,7 +5,6 @@ import { defineConfig } from "vitest/config";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/test_task-vilar/",
   plugins: [react()],
   resolve: {
     alias: {

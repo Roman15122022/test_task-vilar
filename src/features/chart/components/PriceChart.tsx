@@ -25,7 +25,7 @@ export function PriceChart({ data, loading = false }: PriceChartProps): ReactEle
   return (
     <div aria-busy={loading} data-testid="price-chart">
       <Spin spinning={loading}>
-        <div style={{ minHeight: CHART_HEIGHT, minWidth: 0, width: "100%" }}>
+        <div>
           <ResponsiveContainer
             height={CHART_HEIGHT}
             minHeight={CHART_HEIGHT}

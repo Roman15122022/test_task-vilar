@@ -1,2 +1,3 @@
-import { sortBy } from "../../../node_modules/es-toolkit/dist/compat/array/sortBy.mjs";
+import { sortBy } from "es-toolkit/array";
+
 export default sortBy;

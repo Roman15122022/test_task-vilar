@@ -1,2 +1,3 @@
-import { maxBy } from "../../../node_modules/es-toolkit/dist/compat/math/maxBy.mjs";
+import { maxBy } from "es-toolkit/array";
+
 export default maxBy;

@@ -31,7 +31,7 @@ function ChartPage(): ReactElement {
   }
 
   return (
-    <Space orientation="vertical" size="large" style={{ display: "flex" }}>
+    <Space orientation="vertical" size="large">
       <div>
         <Title level={2}>Графік курсу</Title>
         <Paragraph type="secondary">

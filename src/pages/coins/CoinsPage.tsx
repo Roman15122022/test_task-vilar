@@ -18,7 +18,7 @@ function CoinsPage(): ReactElement {
   });
 
   return (
-    <Space orientation="vertical" size="large" style={{ display: "flex" }}>
+    <Space orientation="vertical" size="large">
       <div>
         <Title level={2}>Топ криптовалют</Title>
         <Paragraph type="secondary">

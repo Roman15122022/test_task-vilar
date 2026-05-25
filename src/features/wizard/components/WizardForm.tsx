@@ -36,13 +36,7 @@ export function WizardForm({ onSubmit }: WizardFormProps): ReactElement {
   }
 
   return (
-    <Form
-      form={form}
-      layout="vertical"
-      onFieldsChange={updateSubmitState}
-      onFinish={onSubmit}
-      style={{ maxWidth: 640, width: "100%" }}
-    >
+    <Form form={form} layout="vertical" onFieldsChange={updateSubmitState} onFinish={onSubmit}>
       <Form.Item
         label="Імʼя"
         name="name"
@@ -94,7 +88,6 @@ export function WizardForm({ onSubmit }: WizardFormProps): ReactElement {
           aria-label="Вік"
           max={wizardValidation.ageMax}
           placeholder={String(wizardValidation.ageMin)}
-          style={{ width: "100%" }}
         />
       </Form.Item>
       <Form.Item>
